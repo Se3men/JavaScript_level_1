@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework lesson - 2</title>
+</head>
+<body>
+<h2>Задание 1</h2>
+    <script>
+        var a = 1, b = 1, c, d;
+
+        c = ++a; alert(c + ". " + "с = 2 потому, что префиксная форма инкремента сперва увеличивает переменную A на единицу, а только потом передаст полученное значение в переменную C");
+
+        d = b++; alert(d + ". " + "d = 1 потому, что постфиксная форма инкремента сперва передает значение b переменной d, a затем уже увеличит её на единицу"); 
+
+        c = (2+ ++a); alert(c + ". " + "c = 5 потому, что в переменной А уже было 2, далее при помощи префиксной формы инкремента мы увеличиваем А на единицу (до 3) и прибавляем 2 по условию выражения");
+
+        d = (2+ b++); alert(d + ". " + "d = 4 потому, что в переменной b было значение 2, далее мы сперва передаем это значение в выражение, получаем 2 + 2 = 4, и только после этого b будет увеличено на единицу до 3");
+
+        alert(a + ". " + "a будет равна 3, потому что эта переменная была увеличена на 2 единицы"); 
+
+        alert(b + ". " + "b будет равна 3, потому что эта переменная была увеличена на 2 единицы в итоге, несмотряна то, что в предыдущих выражениях передавала значение до увеличения");
+    </script>
+
+
+    <h2>Задание 2</h2>
+    <script>
+        var a = 2;
+        var x = 1 + (a *= 2);
+        alert("x = " + x + " потому, что запись a *= 2 означает a = a * 2, что в итоге даст 4, далее прибавляем единицу, получаем 5");
+    </script>
+
+
+    <h2>Задание 3</h2>
+    <script>
+        var a = Math.floor(Math.random() * 200 - 100);
+        var b = Math.floor(Math.random() * 100 - 50);
+        if (a >= 0 && b >= 0) {
+            console.log(a);
+            console.log(b);
+            console.log(a - b);
+        } else if (a < 0 && b < 0) {
+            console.log(a);
+            console.log(b);
+            console.log(a * b);
+        } else {
+            console.log(a);
+            console.log(b);
+            console.log(a + b);
+        } // дополнительно сделал вывод в консоль переменных, чтобы посмотреть какие комбинации бывают и как часто.
+    </script>
+
+
+    <h2>Задание 4</h2>
+    <script>
+        var a = Math.floor(Math.random() * 17);
+        switch(a) {
+            case 0:
+            console.log("ноль");
+            break;
+            case 1:
+            console.log("один");
+            break;
+            case 2:
+            console.log("два");
+            break;
+            case 3:
+            console.log("три");
+            break;
+            case 4:
+            console.log("четыре");
+            break;
+            case 5:
+            console.log("пять");
+            break;
+            case 6:
+            console.log("шесть");
+            break;
+            case 7:
+            console.log("семь");
+            break;
+            case 8:
+            console.log("восемь");
+            break;
+            case 9:
+            console.log("девять");
+            break;
+            case 10:
+            console.log("десять");
+            break;
+            case 11:
+            console.log("одинадцать");
+            break;
+            case 12:
+            console.log("двенадцать");
+            break;
+            case 13:
+            console.log("тринадцать");
+            break;
+            case 14:
+            console.log("четырнадцать");
+            break;
+            case 15:
+            console.log("пятнадцать");
+            break;
+            default:
+            console.log("Несоответствует необходимому нам диапазону чисел!")
+        }
+    </script>
+
+    <!-- <script>
+        function switchTraining() {
+            var a = Math.floor(Math.random() * 16);
+            switch (a) {
+                case a:
+                console.log("Выводим число: " + a);
+                break;
+            }
+            
+        }
+
+        switchTraining();
+    </script> -->
+    
+    <h2>Задание 5</h2>
+    <script>
+        function calcAdd(x, y) {
+            return x + y;
+        }
+
+        var getSum = calcAdd(2, 2);
+        alert(getSum);
+
+        function calcSub(x, y) {
+            return x - y;
+        }
+
+        var getDif = calcSub(8, 4);
+        alert(getDif);
+
+        function calcMult(x, y) {
+            return x * y;
+        }
+
+        var getComp = calcMult(2, 2);
+        alert(getComp);
+
+        function calcDiv(x, y) {
+            return x / y;
+        }
+
+        var getQuot = calcDiv(16, 4);
+        alert(getQuot);
+    </script>
+
+    <!-- <h2>Задание 6</h2>
+    <script>
+        function mathOperation(arg1, arg2, operation) {
+            arg1 = Math.floor(Math.random() * 200 - 100);
+            arg2 = Math.floor(Math.random() * 200 - 100);
+            if (arg1 >= 0 && arg2 >= 0) {
+                operation = arg1 - arg2;
+            } else if (arg1 < 0 && arg2 < 0) {
+                operation = arg1 * arg2;
+            } else {
+                operation = arg1 + arg2;
+            }
+            return operation;
+        }
+        console.log(mathOperation());
+    </script> -->
+
+    <script>
+        function mathOperation(arg1, arg2, operation) {
+            arg1 = parseInt(prompt("Введите первое число: "));
+            arg2 = parseInt(prompt("Введите второе число: "));
+            operation = prompt("Укажите название арифметической операции(введите 1 для вычитания, 2 для умножения и 3 для сложения): ");
+            var result;
+            switch(operation) {
+                case "1":
+                result = arg1 - arg2;
+                break;
+                case "2":
+                result = arg1 * arg2;
+                break;
+                case "3":
+                result = arg1 + arg2;
+                break;
+                default:
+                console.log("Не знаем таких операций!");
+            }
+            return result;
+        }
+
+        console.log(mathOperation());
+    </script>
+
+    <h2>Задание 7</h2>
+    <script>
+        var a = 0;
+        var b = null;
+        alert(b + " не подчиняется законам математики, он больше, либо равен " + a +
+            ", но не больше и не равен");
+        alert(b + " не больше " + a + ", т.к. " + b + " преобразуется к " + a);
+        alert(b + " не равен " + a + ", т.к. " + b + " рассматривается обособленно от " + a);
+    </script> 
+</body>
+</html>
